@@ -1,0 +1,12 @@
+default:
+  image: "instrumentisto/nmap"
+  arguments: "nmap -T4 -F {host}"
+
+all-ports:
+  image: "instrumentisto/nmap"
+  arguments: "nmap -Pn -n -sS -T4 -p- {host}"
+
+dns:
+  image: "instrumentisto/nmap"
+  arguments: "nmap -Pn -n -sT -sV --version-intensity 9 -T2 --script banner -p53 {host}"
+  
